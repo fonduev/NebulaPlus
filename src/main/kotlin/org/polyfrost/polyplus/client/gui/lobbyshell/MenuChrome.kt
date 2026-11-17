@@ -5,11 +5,13 @@ package org.polyfrost.polyplus.client.gui.lobbyshell
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.height
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.LayoutCoordinates
 import androidx.compose.ui.layout.boundsInRoot
 import androidx.compose.ui.text.font.FontWeight
@@ -25,9 +27,11 @@ import org.polyfrost.oneconfig.api.ui.v1.components.TabRow
 import org.polyfrost.oneconfig.api.ui.v1.components.TabStyle
 import org.polyfrost.oneconfig.api.ui.v1.theme.OneConfigTheme
 import org.polyfrost.polyplus.client.PolyPlusMainMenuConfig
+import org.polyfrost.polyplus.client.gui.ASSETS
 import org.polyfrost.polyplus.client.gui.ModIntegrationButton
 import org.polyfrost.polyplus.client.gui.ModIntegrationButtons
 import org.polyfrost.polyplus.client.gui.Outfit
+import org.polyfrost.polyplus.client.gui.RasterImage
 import org.polyfrost.polyplus.client.lobby.StartupOverlay
 import org.polyfrost.oneconfig.api.ui.v1.components.Text
 
@@ -38,7 +42,13 @@ private val NAV_UNDERLINE_HEIGHT = 2.dp
 internal fun Wordmark(modifier: Modifier = Modifier, mark: Modifier = Modifier, word: Modifier = Modifier) {
     Row(modifier, verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(10.dp)) {
         Box(mark) { LobbyIcon("logo", size = 28.dp) }
-        Box(word) { Text("NEBULA", style = OneConfigTheme.current.typography.body.copy(fontSize = 22.sp, fontWeight = FontWeight.Bold, letterSpacing = 2.5.sp, fontFamily = Outfit), maxLines = 1, softWrap = false) }
+        Box(word) {
+            RasterImage(
+                "${ASSETS}nebula-launcher-title.png",
+                modifier = Modifier.height(26.dp),
+                contentScale = ContentScale.Fit,
+            )
+        }
     }
 }
 

@@ -110,7 +110,7 @@ object LobbySceneStore {
     //? if > 1.8.9 {
     private val BUNDLED = listOf(
         bundled("snowy_village", "Snowy village", "minecraft:snowy_taiga", 18000L),
-        bundled("desert_village", "Desert village", "minecraft:desert", 12254L),
+        bundled("desert_village", "Cosmic Space", "minecraft:the_end", 18000L, profile = "outdoor", dimension = "minecraft:the_end"),
         bundled("cherry_grove", "Cherry grove", "minecraft:cherry_grove", 3358L),
         bundled("lush_cave", "Lush cave", "minecraft:lush_caves", 6000L, "cave"),
     )

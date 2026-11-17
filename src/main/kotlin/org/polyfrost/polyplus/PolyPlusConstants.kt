@@ -5,8 +5,8 @@ import org.slf4j.LoggerFactory
 import java.util.Properties
 
 object PolyPlusConstants {
-    const val ID = "polyplus"
-    const val NAME = "PolyPlus"
+    const val ID = "nebulaplus"
+    const val NAME = "NebulaPlus"
 
     val IS_DEV_ENV: Boolean = FabricLoader.getInstance().isDevelopmentEnvironment
 
@@ -36,5 +36,5 @@ object PolyPlusConstants {
     const val LOADER = "fabric"
     //?}
 
-    const val DISCORD_URL = "https://polyfrost.org/discord"
+    const val DISCORD_URL = "https://discord.gg/cfE254mQHZ"
 }

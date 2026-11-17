@@ -86,6 +86,7 @@ internal object MainMenuRasterAssets {
         "avatar.png",
         "hypixel.png",
         "server.png",
+        "nebula-launcher-title.png",
     ).map { ASSETS + it }
     private val cache = ConcurrentHashMap<String, ImageBitmap>()
 

@@ -140,7 +140,17 @@ class LobbyAvatar(
         val head = yHeadRot
         val waiting = arrival == Arrival.WAITING
         val moving = stepArrival()
-        if (!moving && arrival == Arrival.LANDED) followBody()
+        if (!moving && arrival == Arrival.LANDED) {
+            followBody()
+            // Zero-G Cosmic floating animation (Nebula Space Effect)
+            val floatTicks = (LobbyScene.tick() + tickCount).toDouble()
+            val bobbing = kotlin.math.sin(floatTicks * 0.045) * 0.008
+            setPos(x, y + bobbing, z)
+            fallDistance = 0f
+            //? if > 1.8.9 {
+            isNoGravity = true
+            //?}
+        }
         super.tick()
         if (moving) {
             yBodyRot = yRot

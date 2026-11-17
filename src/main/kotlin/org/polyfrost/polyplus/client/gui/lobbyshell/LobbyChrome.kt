@@ -176,14 +176,11 @@ private class LobbyTab(val label: String, val page: LobbyPage)
 private val TABS = listOf(
     LobbyTab("Play", LobbyPage.Home),
     LobbyTab("Wardrobe", LobbyPage.Wardrobe),
-    LobbyTab("Marketplace", LobbyPage.Marketplace),
-    LobbyTab("Social", LobbyPage.Social),
     LobbyTab("Stats", LobbyPage.Stats),
-    LobbyTab("News", LobbyPage.News),
 )
 
 private fun LobbyTab.activeOn(page: LobbyPage): Boolean = when (this.page) {
-    LobbyPage.Home -> page != LobbyPage.Wardrobe && page != LobbyPage.Social && page != LobbyPage.Marketplace && page != LobbyPage.Stats && page != LobbyPage.News
+    LobbyPage.Home -> page != LobbyPage.Wardrobe && page != LobbyPage.Stats
     else -> this.page == page
 }
 
@@ -295,7 +292,7 @@ private fun BoxScope.LobbyChrome(lobby: LobbyShell, screen: Screen, feed: LobbyF
         LobbyPage.Home -> {
             Box(Modifier.fillMaxSize().avatarTaps(lobby, notch))
             SceneTags(feed, root, notch)
-            LobbyCornerCard(lobby, Modifier.align(Alignment.TopStart).padding(start = LobbyLayout.Margin, top = LobbyLayout.Top))
+            // LobbyCornerCard(lobby, Modifier.align(Alignment.TopStart).padding(start = LobbyLayout.Margin, top = LobbyLayout.Top))
         }
         LobbyPage.Wardrobe -> WardrobePage(onBack = { lobby.show(LobbyPage.Home) }, onMarketplace = { lobby.show(LobbyPage.Marketplace) })
         LobbyPage.Multiplayer -> MultiplayerPage(lobby)
@@ -343,7 +340,7 @@ private fun BoxScope.LobbyChrome(lobby: LobbyShell, screen: Screen, feed: LobbyF
                     Spacer(Modifier.height(STACK_ROW_GAP))
                 }
                 if (stackChat > 0f) {
-                    ChatDock(lobby, stackWidth * stackChat, stackWidth, fill = true)
+                    // ChatDock disabled (Social removed)
                     Spacer(Modifier.height(STACK_ROW_GAP))
                 }
                 if (home) {
@@ -355,7 +352,7 @@ private fun BoxScope.LobbyChrome(lobby: LobbyShell, screen: Screen, feed: LobbyF
                 } else {
                     Row(verticalAlignment = Alignment.Bottom) {
                         if (barChatShown || barChatWidth > 0.dp) {
-                            ChatDock(lobby, barChatWidth, LobbyLayout.ChatWidth, fill = false)
+                            // ChatDock disabled (Social removed)
                             Spacer(Modifier.width(barChatWidth.coerceAtMost(LobbyLayout.Gap)))
                         }
                         key(lobby.profileVersion) { PlayerBar(lobby, Modifier.weight(1f, fill = false)) }
@@ -438,7 +435,8 @@ private fun BoxScope.Footer(screen: Screen) {
         horizontalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         LobbyIcon("footer-logo", size = 14.dp)
-        FooterBrandText("${platformLabel()}   PolyPlus ${PolyPlusConstants.VERSION}", 11.sp, SocialTextPrimary)
+        FooterBrandText("${platformLabel()}   NebulaPlus 1.0.0",
+ 11.sp, SocialTextPrimary)
         Spacer(Modifier.weight(1f))
         CopyrightText(screen, 11.sp, SocialTextSecondary, maxLines = 1)
     }
@@ -501,7 +499,7 @@ private fun ProfileCluster(lobby: LobbyShell, screen: Screen) {
     Row(Modifier.tourAnchor(lobby.anchors, TourAnchor.Tools).a11yRegion(A11yRegion.Tools), verticalAlignment = Alignment.CenterVertically, horizontalArrangement = Arrangement.spacedBy(8.dp)) {
         val mc = Minecraft.getInstance()
         NavIconButton(SOCIAL_ASSETS + "discord.svg", "Join our Discord", { ClientPlatform.openUri(PolyPlusConstants.DISCORD_URL) })
-        NotificationsButton()
+        // NotificationsButton()
         ModMenuSlot(screen)
         NavIconButton("settings", "Mods", { PolyPlusOneConfigIntegration.openMods() })
         NavIconButton("cog", "Minecraft settings", {
