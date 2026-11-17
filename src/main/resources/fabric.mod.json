@@ -6,7 +6,8 @@
     "icon": "icon.png",
     "description": "${mod_description}",
     "authors": [
-        "Polyfrost"
+        "NebulaDevStudios",
+        "Polyfrost (Original Base)"
     ],
     "environment": "client",
     "entrypoints": {
@@ -44,5 +45,9 @@
     "breaks": {
         "auto-reauth": "*",
         "wwaypoints": "<0.8.0"
+    },
+    "contact": {
+        "homepage": "https://nebuladevstudios.com",
+        "sources": "https://github.com/fonduev/NebulaPlus"
     }
 }

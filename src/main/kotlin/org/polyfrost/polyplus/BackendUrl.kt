@@ -1,7 +1,7 @@
 package org.polyfrost.polyplus
 
 enum class BackendUrl(private val defaultUrl: String) {
-    PRODUCTION("https://plus.polyfrost.org"),
+    PRODUCTION("http://localhost:8080"),
     STAGING("https://plus-staging.polyfrost.org"),
     LOCAL("http://localhost:8080");
 

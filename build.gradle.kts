@@ -537,7 +537,7 @@ tasks.withType<ProcessResources>().configureEach {
                 "mod_id" to modId,
                 "mod_name" to modName,
                 "mod_version" to modVersion,
-                "mod_description" to "Various expansions for the OneClient 'modpack'",
+                "mod_description" to "NebulaPlus companion client mod for Nebula Launcher by NebulaDevStudios",
                 "minor_mc_version" to minecraftPredicate,
                 "oneconfig_version" to oneconfigVersion,
             ),

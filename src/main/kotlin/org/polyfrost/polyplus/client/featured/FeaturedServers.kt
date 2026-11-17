@@ -24,7 +24,7 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 object FeaturedServers {
-    private const val PRODUCTION_URL = "https://data-v2.polyfrost.org/oneclient/servers.json"
+    private const val PRODUCTION_URL = "" // Servidor: ninguno (sin servidores patrocinados)
     private const val DEVELOPMENT_FILE_PROPERTY = "polyplus.featuredServers.file"
     private const val MAX_CATALOG_BYTES = 1_048_576
 
@@ -51,7 +51,8 @@ object FeaturedServers {
     @JvmStatic
     fun warmUp() {
         ensureLoaded()
-        if (PrivacyConsent.allowsOnlineServices()) refresh()
+        // Servidor: ninguno
+        if (false) refresh()
     }
 
     @JvmStatic

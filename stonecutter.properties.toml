@@ -1,7 +1,7 @@
-mod.name = "PolyPlus"
-mod.id = "polyplus"
-mod.version = "2.0.11"
-mod.group = "org.polyfrost"
+mod.name = "NebulaPlus"
+mod.id = "nebulaplus"
+mod.version = "1.0.0"
+mod.group = "com.nebuladevstudios"
 
 deps.fabric_loader = "0.19.5"
 deps.fabric_language_kotlin = "1.14.1+kotlin.2.4.20"
