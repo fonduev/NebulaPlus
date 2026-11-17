@@ -47,4 +47,4 @@ stonecutter.create(rootProject) {
     vcsVersion = "26.3-fabric"
 }
 
-rootProject.name = "PolyPlus"
+rootProject.name = "NebulaPlus"
